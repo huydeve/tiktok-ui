@@ -3,6 +3,9 @@
 
 :root {
     --primary: red;
+    --black: #000;
+    --text-color: #333;
+
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
 
@@ -22,3 +25,14 @@ body {
     font-family: 'IBM Plex Sans Devanagari', sans-serif;
     text-rendering: optimizeSpeed;
 }
+
+button, input, [tabindex] {
+    outline: none;
+    border: none;
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
