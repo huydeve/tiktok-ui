@@ -105,7 +105,18 @@
 
 .actions {
     display: flex;
+    align-items: center;
 
+}
+
+.action-btn {
+    background-color: transparent;
+    margin-left: 16px;
+
+}
+
+.message-btn {
+    padding: 3px 3px 0px 3px;
 }
 
 .upload-btn {
@@ -118,6 +129,16 @@
     }
 }
 
+.user-avatar {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+
 .more-btn {
     font-size: 20px;
     margin-left: 16px;
@@ -126,6 +147,7 @@
     cursor: pointer;
     // padding: 0 4px;
 }
+
 .icon-plus {
     margin-right: 8px;
 }
