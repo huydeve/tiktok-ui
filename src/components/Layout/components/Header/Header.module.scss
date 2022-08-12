@@ -13,6 +13,7 @@
 .inner {
     height: 100%;
     width: var(--default-layout-width);
+    padding: 0 var(--default-layout-horizontal-spacer);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -46,7 +47,7 @@
 
     }
 
-    input:not(:placeholder-shown)~.search-btn svg {
+    input:not(:placeholder-shown)~.search-btn .search-icon {
         fill: rgba(22, 24, 35, 0.75)
     }
 
@@ -102,6 +103,11 @@
     }
 }
 
+.actions {
+    display: flex;
+
+}
+
 .upload-btn {
     border-radius: 2px !important;
     color: #161823 !important;
@@ -112,6 +118,21 @@
     }
 }
 
+.more-btn {
+    font-size: 20px;
+    margin-left: 16px;
+    padding: 0 4px;
+    background-color: white !important;
+    cursor: pointer;
+    // padding: 0 4px;
+}
 .icon-plus {
     margin-right: 8px;
+}
+
+
+// Menu 
+.icon-menu {
+    height: 20px !important;
+    width: 20px !important;
 }

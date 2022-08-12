@@ -22,9 +22,12 @@
     }
 }
 
+.icon {
+    // height: 20px;
+    display: inline-block; 
+}
 .icon + .title, .title + .icon {
     margin-left: 8px;
-
 }
 
 .rounded {
@@ -55,7 +58,7 @@
 .outline {
     color: var(--primary);
     border-color: currentColor;
-
+    height: 36px;
     &:hover {
         background-color: rgb(254, 44, 85, 0.06);
         border-color: currentColor;
@@ -79,6 +82,7 @@
 
 .medium {
     min-width: 100px;
+    height: 36px;
     padding: 9px 16px;
 }
 
