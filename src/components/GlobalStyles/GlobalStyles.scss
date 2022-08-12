@@ -2,8 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&display=swap');
 
 :root {
-    --primary: red;
+    --primary: rgb(254, 44, 85, 1.0);
     --black: #000;
+    --white: #fff;
     --text-color: #333;
 
     --default-layout-header-height: 60px;
@@ -26,7 +27,9 @@ body {
     text-rendering: optimizeSpeed;
 }
 
-button, input, [tabindex] {
+button,
+input,
+[tabindex] {
     outline: none;
     border: none;
 }
@@ -35,4 +38,3 @@ a[href] {
     color: var(--text-color);
     text-decoration: none;
 }
-

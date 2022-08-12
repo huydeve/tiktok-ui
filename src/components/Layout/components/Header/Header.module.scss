@@ -21,7 +21,8 @@
 
 .logo {}
 
-.search, .search-results {
+.search,
+.search-results {
     width: 361px;
 }
 
@@ -99,4 +100,18 @@
     svg {
         fill: rgba(22, 24, 35, 0.25);
     }
+}
+
+.upload-btn {
+    border-radius: 2px !important;
+    color: #161823 !important;
+    border-color: rgba(22, 24, 35, 0.12) !important;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03) !important;
+    }
+}
+
+.icon-plus {
+    margin-right: 8px;
 }
