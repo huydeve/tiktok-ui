@@ -1,12 +1,13 @@
 const images = {
   logo: require('@/assets/images/logo.svg').default,
+  noImage: require('@/assets/images/unknow-image.png'),
 };
 
 export default images;
 
-export const SearchIcon = ({ ...props }) => {
+export const SearchIcon = ({ width = 24, height = 24, ...props }) => {
   return (
-    <svg {...props} width="24" height="24" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+    <svg {...props} width={width} height={height} viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -16,9 +17,16 @@ export const SearchIcon = ({ ...props }) => {
   );
 };
 
-export const MenuIcon = ({ ...props }) => {
+export const MenuIcon = ({ width = 26, height = 26, ...props }) => {
   return (
-    <svg width="1em" height="1em" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      {...props}
+      width={width}
+      height={height}
+      viewBox="0 0 48 48"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -28,12 +36,12 @@ export const MenuIcon = ({ ...props }) => {
   );
 };
 
-export const LanguagueIcon = ({ ...props }) => {
+export const LanguagueIcon = ({ width = 26, height = 26, ...props }) => {
   return (
     <svg
       {...props}
-      width="26"
-      height="26"
+      width={width}
+      height={height}
       viewBox="0 0 48 48"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -47,12 +55,12 @@ export const LanguagueIcon = ({ ...props }) => {
   );
 };
 
-export const FeedbackIcon = ({ ...props }) => {
+export const FeedbackIcon = ({ width = 26, height = 26, ...props }) => {
   return (
     <svg
       {...props}
-      width="1rem"
-      height="1rem"
+      width={width}
+      height={height}
       viewBox="0 0 48 48"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -66,12 +74,12 @@ export const FeedbackIcon = ({ ...props }) => {
   );
 };
 
-export const KeyboardIcon = ({ ...props }) => {
+export const KeyboardIcon = ({ width = 26, height = 26, ...props }) => {
   return (
     <svg
       {...props}
-      width="26"
-      height="26"
+      width={width}
+      height={height}
       viewBox="0 0 48 48"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -84,9 +92,16 @@ export const KeyboardIcon = ({ ...props }) => {
     </svg>
   );
 };
-export const MessagesIcon = ({ ...props }) => {
+export const MessagesIcon = ({ width = 26, height = 26, ...props }) => {
   return (
-    <svg {...props} width="26" height="26" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      {...props}
+      width={width}
+      height={height}
+      viewBox="0 0 48 48"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -95,9 +110,16 @@ export const MessagesIcon = ({ ...props }) => {
     </svg>
   );
 };
-export const BlackMessagesIcon = ({ ...props }) => {
+export const BlackMessagesIcon = ({ width = 26, height = 26, ...props }) => {
   return (
-    <svg {...props} width="26" height="26" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      {...props}
+      width={width}
+      height={height}
+      viewBox="0 0 48 48"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
@@ -107,9 +129,16 @@ export const BlackMessagesIcon = ({ ...props }) => {
   );
 };
 
-export const InboxIcon = ({ ...props }) => {
+export const InboxIcon = ({ width = 32, height = 32, ...props }) => {
   return (
-    <svg {...props} width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      {...props}
+      width={width}
+      height={height}
+      viewBox="0 0 32 32"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -118,9 +147,16 @@ export const InboxIcon = ({ ...props }) => {
     </svg>
   );
 };
-export const BlackInboxIcon = ({ ...props }) => {
+export const BlackInboxIcon = ({ width = 32, height = 32, ...props }) => {
   return (
-    <svg {...props} width="32" height="32" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      {...props}
+      width={width}
+      height={height}
+      viewBox="0 0 48 48"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -129,12 +165,12 @@ export const BlackInboxIcon = ({ ...props }) => {
     </svg>
   );
 };
-export const ProfileIcon = ({ ...props }) => {
+export const ProfileIcon = ({ width = 20, height = 20, ...props }) => {
   return (
     <svg
-      class="css-g0144v"
-      width="20px"
-      height="20px"
+      {...props}
+      width={width}
+      height={height}
       viewBox="0 0 48 48"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -147,12 +183,12 @@ export const ProfileIcon = ({ ...props }) => {
     </svg>
   );
 };
-export const CoinIcon = ({ ...props }) => {
+export const CoinIcon = ({ width = 20, height = 20, ...props }) => {
   return (
     <svg
-      class="css-g0144v"
-      width="20px"
-      height="20px"
+      {...props}
+      width={width}
+      height={height}
       viewBox="0 0 20 20"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -170,12 +206,12 @@ export const CoinIcon = ({ ...props }) => {
     </svg>
   );
 };
-export const SettingIcon = ({ ...props }) => {
+export const SettingIcon = ({ width = 20, height = 20, ...props }) => {
   return (
     <svg
-      class="css-g0144v"
-      width="20px"
-      height="20px"
+      {...props}
+      width={width}
+      height={height}
       viewBox="0 0 48 48"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -188,12 +224,12 @@ export const SettingIcon = ({ ...props }) => {
     </svg>
   );
 };
-export const LogoutIcon = ({ ...props }) => {
+export const LogoutIcon = ({ width = 20, height = 20, ...props }) => {
   return (
     <svg
-      class="css-g0144v"
-      width="20px"
-      height="20px"
+      {...props}
+      width={width}
+      height={height}
       viewBox="0 0 48 48"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"

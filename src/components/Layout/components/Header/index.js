@@ -27,6 +27,7 @@ import { Children, useEffect, useState } from 'react';
 import AccountItem from '@/components/AccountItem';
 import Button from '@/components/Button';
 import Menu from '@/components/Popper/Menu';
+import Image from '@/components/Image';
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
   {
@@ -153,7 +154,7 @@ export default function Header() {
             <button className={cx('more-btn')}>
               {currentUser ? (
                 <>
-                  <img
+                  <Image
                     className={cx('user-avatar')}
                     alt=""
                     src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7130916756222132229~c5_720x720.jpeg?x-expires=1660467600&x-signature=Yta2k7jYuSzJlTj4D2VwELJRnMM%3D"
