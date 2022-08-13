@@ -11,6 +11,7 @@ import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 import { ClearIcon, LoadingIcon, SearchIcon } from '@/assets/images';
 import { searchApi } from '@/services';
+import useDebounce from '@/hooks/useDebounce';
 
 const cx = classNames.bind(styles);
 
@@ -20,19 +21,22 @@ function Search() {
   const [showResult, setShowResult] = useState(true);
   const [loading, setLoading] = useState(false);
 
+  const debounced = useDebounce(searchValue, 500);
+
   const inputRef = useRef();
   const searchBox = useRef();
 
   useEffect(() => {
-    if (!searchValue.trim()) {
+    if (!debounced.trim()) {
       setSearchResult([])
       return;
     }
+
     setLoading(true);
     (async () => {
       await searchApi
         .getSearchResult({
-          q: searchValue,
+          q: debounced,
           type: 'less',
         })
         .then((response) => {
@@ -44,7 +48,7 @@ function Search() {
           setLoading(false);
         });
     })();
-  }, [searchValue]);
+  }, [debounced]);
   function validate(input) {
     if (/^\s/.test(input.value)) input.value = '';
   }
