@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
+import routesConfig from '@/config/routes'
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
@@ -17,7 +19,7 @@ import images, {
   MessagesIcon,
   ProfileIcon,
   SettingIcon,
-} from '@/assets/images';
+} from '@/components/Icons';
 
 import { useEffect, useState } from 'react';
 import Button from '@/components/Button';
@@ -55,7 +57,6 @@ const MENU_ITEMS = [
 ];
 
 export default function Header() {
-
   const currentUser = true;
 
   const handleMenuChange = (menuItem) => {
@@ -85,18 +86,20 @@ export default function Header() {
       to: '/feedback',
       separate: true,
     },
-  ]
+  ];
 
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('logo')}>
-          <img src={images.logo} alt="Tiktok" />
+          <Link to = {routesConfig.home} className={cx('logo-link')}>
+            <img src={images.logo} alt="Tiktok" />
+          </Link>
         </div>
 
-       <Search/>
+        <Search />
         <div className={cx('actions')}>
-          <Button outline leftIcon={<FontAwesomeIcon icon={faPlus} />} className={cx('upload-btn')}>
+          <Button outline leftIcon={<FontAwesomeIcon height={20} width={20} icon={faPlus} />} className={cx('upload-btn')}>
             Upload
           </Button>
           {currentUser ? (

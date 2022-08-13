@@ -1,4 +1,4 @@
-import images from '@/assets/images';
+import images from '@/components/Icons';
 import classNames from 'classnames/bind';
 import React, { forwardRef, useState } from 'react';
 import styles from './Image.module.scss';

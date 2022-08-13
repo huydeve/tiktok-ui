@@ -9,7 +9,7 @@ import AccountItem from '@/components/AccountItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
-import { ClearIcon, LoadingIcon, SearchIcon } from '@/assets/images';
+import { ClearIcon, LoadingIcon, SearchIcon } from '@/components/Icons';
 import { searchApi } from '@/services';
 import useDebounce from '@/hooks/useDebounce';
 
@@ -28,7 +28,7 @@ function Search() {
 
   useEffect(() => {
     if (!debounced.trim()) {
-      setSearchResult([])
+      setSearchResult([]);
       return;
     }
 
@@ -66,13 +66,9 @@ function Search() {
   };
   const handleSearch = () => {};
 
-  const handleClickSearchBox = (e) => {
-    searchBox.current.style.borderColor = 'rgba(22, 24, 35, 0.2)';
-  };
 
-  const handleBlurSearchBox = (e) => {
-    searchBox.current.style.borderColor = 'transparent';
-  };
+
+  
   return (
     <TippyHeadless
       interactive
@@ -89,7 +85,7 @@ function Search() {
         </div>
       )}
     >
-      <div ref={searchBox} className={cx('search')} onBlur={handleBlurSearchBox}>
+      <div ref={searchBox} className={cx('search')} >
         <input
           ref={inputRef}
           autoComplete="off"
@@ -98,7 +94,6 @@ function Search() {
           value={searchValue}
           onChange={handleChange}
           onInput={(e) => validate(e.target)}
-          onClick={handleClickSearchBox}
           onFocus={() => {
             setShowResult(true);
           }}
@@ -111,7 +106,7 @@ function Search() {
         )}
 
         {loading && <LoadingIcon className={cx('loading')} />}
-        <button className={cx('search-btn')} onClick={handleSearch}>
+        <button className={cx('search-btn')} onClick={handleSearch} onMouseDown={e => e.preventDefault()}>
           {/* <FontAwesomeIcon icon={faMagnifyingGlass}/> */}
           <SearchIcon className={cx('search-icon')} />
         </button>
