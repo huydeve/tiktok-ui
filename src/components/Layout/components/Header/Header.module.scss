@@ -22,6 +22,9 @@
 
 .logo {}
 
+.logo-link {
+    display: flex;
+}
 
 .actions {
     display: flex;
@@ -40,10 +43,12 @@
 }
 
 .upload-btn {
-    border-radius: 2px !important;
+    width: 113.63px !important;
+    height: 36px !important;
     color: #161823 !important;
+    padding: 0 16px !important;
+    border-radius: 2px !important;
     border-color: rgba(22, 24, 35, 0.12) !important;
-
     &:hover {
         background-color: rgba(22, 24, 35, 0.03) !important;
     }

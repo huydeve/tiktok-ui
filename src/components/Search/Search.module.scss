@@ -17,8 +17,10 @@
         height: 100%;
         color: var(--black);
         font-size: 16px;
+        font-weight: 400;
         background-color: transparent;
         caret-color: var(--primary);
+
     }
 
     input:not(:placeholder-shown)~.search-btn svg {
@@ -36,8 +38,10 @@
         background-color: rgba(22, 24, 35, 0.12);
     }
 
-   
-    
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+
 }
 
 
@@ -67,10 +71,12 @@
     from {
         transform: translateY(-50%) rotate(0);
     }
+
     to {
         transform: translateY(-50%) rotate(360deg);
     }
 }
+
 .search-btn {
     width: var(--search--button-width);
     height: 100%;
