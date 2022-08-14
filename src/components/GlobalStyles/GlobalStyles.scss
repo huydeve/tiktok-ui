@@ -6,7 +6,8 @@
     --black: #000;
     --white: #fff;
     --text-color: black;
-    --font-family: 'ProximaNova', sans-serif;
+    --font-paragraph: 'ProximaNova', sans-serif;
+    --font-heading: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif; ;
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
     --default-layout-horizontal-spacer: 24px;
@@ -25,7 +26,7 @@ html {
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-paragraph);
     text-rendering: optimizeSpeed;
     min-height: 100vh;
     line-height: 1.5;
@@ -87,7 +88,7 @@ html *::-webkit-scrollbar-track {
 button,
 input,
 [tabindex] {
-    font-family: var(--font-family);
+    font-family: var(--font-paragraph);
     outline: none;
     border: none;
 
@@ -103,6 +104,11 @@ a[href] {
     font-family: ProximaNova;
     src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
     font-weight: 400;
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/ProximaNova-Semibold.woff2');
+    font-weight: 500;
 }
 
 @font-face {
@@ -131,6 +137,12 @@ a[href] {
     font-family: SofiaPro;
     src: url('/assets/fonts/sofiapro-bold.woff2');
     font-weight: 700;
+}
+
+@font-face {
+    font-family: SofiaPro;
+    src: url('/assets/fonts/sofiapro-regular.woff');
+    font-weight: 400;
 }
 
 

@@ -37,7 +37,7 @@ export const MenuIcon = ({ width = 26, height = 26, ...props }) => {
   );
 };
 
-export const LanguagueIcon = ({ width = 26, height = 26, ...props }) => {
+export const LanguageIcon = ({ width = "50px", height = "50px", ...props }) => {
   return (
     <svg
       {...props}

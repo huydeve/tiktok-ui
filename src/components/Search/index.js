@@ -1,12 +1,10 @@
 import React, { memo, useRef } from 'react';
-import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+
 import TippyHeadless from '@tippyjs/react/headless';
 
 import { Wrapper as PopperWrapper } from '@/components/Popper';
 import { useEffect, useState } from 'react';
 import AccountItem from '@/components/AccountItem';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 import { ClearIcon, LoadingIcon, SearchIcon } from '@/components/Icons';
@@ -107,8 +105,8 @@ function Search({ ...props }) {
               <ClearIcon />
             </button>
           )}
-
           {loading && <LoadingIcon className={cx('loading')} />}
+          <span className={cx('divider')}></span>
           <button className={cx('search-btn')} onClick={handleSearch} onMouseDown={(e) => e.preventDefault()}>
             {/* <FontAwesomeIcon icon={faMagnifyingGlass}/> */}
             <SearchIcon className={cx('search-icon')} />

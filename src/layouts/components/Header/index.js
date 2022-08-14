@@ -1,19 +1,18 @@
 import { Link } from 'react-router-dom';
-import routesConfig from '@/config/routes';
+import config from '@/config';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-
 import 'tippy.js/dist/tippy.css'; // optional
 import images, {
   CoinIcon,
   FeedbackIcon,
   InboxIcon,
   KeyboardIcon,
-  LanguagueIcon,
+  LanguageIcon,
   LogoutIcon,
   MenuIcon,
   MessagesIcon,
@@ -21,18 +20,19 @@ import images, {
   SettingIcon,
 } from '@/components/Icons';
 
-import { useEffect, useState } from 'react';
 import Button from '@/components/Button';
 import Menu from '@/components/Popper/Menu';
 import Image from '@/components/Image';
 import Search from '@/components/Search';
+import { useEffect, useState } from 'react';
+
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
   {
-    icon: <LanguagueIcon className={cx('icon-menu')} />,
+    icon: <LanguageIcon className={cx('icon-menu')} />,
     title: 'English',
     children: {
-      title: 'Languague',
+      title: 'Language',
       data: [
         {
           code: 'en',
@@ -40,7 +40,35 @@ const MENU_ITEMS = [
         },
         {
           code: 'vi',
-          title: 'Tiếng việt',
+          title: 'বাঙ্গালি',
+        },
+        {
+          code: 'vi',
+          title: 'Cebuano',
+        },
+        {
+          code: 'vi',
+          title: 'Čeština',
+        },
+        {
+          code: 'vi',
+          title: 'Українська',
+        },
+        {
+          code: 'vi',
+          title: 'Português',
+        },
+        {
+          code: 'vi',
+          title: 'Polski',
+        },
+        {
+          code: 'vi',
+          title: 'Bahasa',
+        },
+        {
+          code: 'vi',
+          title: '한국어',
         },
         {
           code: 'vi',
@@ -48,71 +76,43 @@ const MENU_ITEMS = [
         },
         {
           code: 'vi',
-          title: 'Tiếng việt',
+          title: 'עברית',
         },
         {
           code: 'vi',
-          title: 'Tiếng việt',
+          title: 'Română',
         },
         {
           code: 'vi',
-          title: 'Tiếng việt',
+          title: 'Nederlands',
         },
         {
           code: 'vi',
-          title: 'Tiếng việt',
+          title: 'Русский',
         },
         {
           code: 'vi',
-          title: 'Tiếng việt',
+          title: 'ไทย',
         },
         {
           code: 'vi',
-          title: 'Tiếng việt',
+          title: '繁體中文',
         },
         {
           code: 'vi',
-          title: 'Tiếng việt',
+          title: '简体中文',
         },
         {
           code: 'vi',
-          title: 'Tiếng việt',
+          title: 'Türkçe',
         },
         {
           code: 'vi',
-          title: 'Tiếng việt',
+          title: '日本語（日本)',
         },
         {
           code: 'vi',
-          title: 'Tiếng việt',
-        },
-        {
-          code: 'vi',
-          title: 'Tiếng việt',
-        },
-        {
-          code: 'vi',
-          title: 'Tiếng việt',
-        },
-        {
-          code: 'vi',
-          title: 'Tiếng việt',
-        },
-        {
-          code: 'vi',
-          title: 'Tiếng việt',
-        },
-        {
-          code: 'vi',
-          title: 'Tiếng việt',
-        },
-        {
-          code: 'vi',
-          title: 'Tiếng việt',
-        },
-        {
-          code: 'vi',
-          title: 'Tiếng việt',
+          title: 'ខ្មែរ',
         },
       ],
     },
@@ -124,7 +124,7 @@ const MENU_ITEMS = [
   },
   {
     icon: <KeyboardIcon className={cx('icon-menu')} />,
-    title: 'Keybroad shortcuts',
+    title: 'Keyboard shortcuts',
   },
 ];
 
@@ -134,6 +134,8 @@ export default function Header() {
   const handleMenuChange = (menuItem) => {
     console.log(menuItem);
   };
+
+ 
 
   const USER_MENU = [
     {
@@ -160,19 +162,14 @@ export default function Header() {
     },
   ];
 
-
-  
-
-
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('logo')}>
-          <Link to={routesConfig.home} className={cx('logo-link')}>
-            <img src={images.logo} alt="Tiktok" />
+          <Link to={config.routes.home} className={cx('logo-link')}>
+            <img src={images.logo} alt="TikTok" />
           </Link>
         </div>
-
         <Search />
         <div className={cx('actions')}>
           <Button
