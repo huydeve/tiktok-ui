@@ -135,8 +135,6 @@ export default function Header() {
     console.log(menuItem);
   };
 
- 
-
   const USER_MENU = [
     {
       icon: <ProfileIcon className={cx('icon-menu')} />,
@@ -200,19 +198,21 @@ export default function Header() {
             </>
           )}
           <Menu items={currentUser ? USER_MENU : MENU_ITEMS} onChange={handleMenuChange}>
-            {currentUser ? (
-              <button className={cx('avatar-btn')}>
-                <Image
-                  className={cx('user-avatar')}
-                  alt=""
-                  src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7130916756222132229~c5_720x720.jpeg?x-expires=1660467600&x-signature=Yta2k7jYuSzJlTj4D2VwELJRnMM%3D"
-                />
-              </button>
-            ) : (
-              <button className={cx('more-btn')}>
-                <MenuIcon />
-              </button>
-            )}
+            <div>
+              {currentUser ? (
+                <button className={cx('avatar-btn')}>
+                  <Image
+                    className={cx('user-avatar')}
+                    alt=""
+                    src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7130916756222132229~c5_720x720.jpeg?x-expires=1660467600&x-signature=Yta2k7jYuSzJlTj4D2VwELJRnMM%3D"
+                  />
+                </button>
+              ) : (
+                <button className={cx('more-btn')}>
+                  <MenuIcon />
+                </button>
+              )}
+            </div>
           </Menu>
         </div>
       </div>

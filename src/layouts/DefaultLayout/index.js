@@ -3,7 +3,11 @@ import className from 'classnames/bind'
 import Header from '@/layouts/components/Header';
 import Sidebar from './Sidebar';
 import React from 'react';
+import PropTypes from 'prop-types'
 
+DefaultLayout.propTypes = {
+  children: PropTypes.node.isRequired
+}
 const cx = className.bind(styles)
 
 export default function DefaultLayout({ children }) {

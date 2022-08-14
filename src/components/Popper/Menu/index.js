@@ -1,20 +1,25 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import Tippy from '@tippyjs/react/headless';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
 import { Wrapper as PopperWrapper } from '@/components/Popper';
 import MenuItem from './MenuItem';
 import Header from './Header';
-
+Menu.propTypes = {
+  // children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
+  items: PropTypes.array,
+  hideOnClick: PropTypes.bool,
+  onChange: PropTypes.func,
+};
 const cx = classNames.bind(styles);
 
 const defaultFn = () => {};
 
 export default function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn, ...props }) {
   const [history, setHistory] = useState([{ data: items }]);
-
   const current = history[history.length - 1];
-
   const renderItems = () => {
     return current.data.map((item, index) => {
       const isParent = !!item.children;
@@ -23,7 +28,7 @@ export default function Menu({ children, items = [], hideOnClick = false, onChan
         <MenuItem
           key={index}
           data={item}
-          className={history.length > 1 ? "menu-item-languages" : null}
+          className={history.length > 1 ? 'menu-item-languages' : null}
           onClick={() => {
             if (isParent) {
               setHistory((prev) => [...prev, item.children]);
@@ -39,7 +44,6 @@ export default function Menu({ children, items = [], hideOnClick = false, onChan
   return (
     <Tippy
       interactive
-      visible
       delay={[0, 700]}
       offset={[10, 12]}
       placement="bottom-end"
@@ -50,7 +54,7 @@ export default function Menu({ children, items = [], hideOnClick = false, onChan
           <PopperWrapper className={cx('menu-popper')}>
             {history.length > 1 && (
               <Header
-                title="Language"
+                title={current.title}
                 onBack={() => {
                   setHistory((prev) => prev.slice(0, prev.length - 1));
                 }}

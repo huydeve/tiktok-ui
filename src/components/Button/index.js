@@ -5,11 +5,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
-
 Button.propTypes = {
-  children: PropTypes.node.isRequired
-}
-
+  children: PropTypes.node.isRequired,
+  to: PropTypes.string,
+  href: PropTypes.string,
+  primary: PropTypes.bool,
+  large: PropTypes.bool,
+  medium: PropTypes.bool,
+  small: PropTypes.bool,
+  text: PropTypes.bool,
+  outline: PropTypes.bool,
+  disabled: PropTypes.bool,
+  rounded: PropTypes.bool,
+  color: PropTypes.string,
+  className: PropTypes.string,
+  leftIcon: PropTypes.node,
+  rightIcon: PropTypes.node,
+  onClick: PropTypes.func,
+};
 
 export default function Button({
   to,

@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 AccountItem.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.object.isRequired,
 };
 export default function AccountItem({ data }) {
   return (
