@@ -20,10 +20,10 @@ const defaultFn = () => {};
 export default function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn, ...props }) {
   const [history, setHistory] = useState([{ data: items }]);
   const current = history[history.length - 1];
+  
   const renderItems = () => {
     return current.data.map((item, index) => {
       const isParent = !!item.children;
-
       return (
         <MenuItem
           key={index}
@@ -41,6 +41,28 @@ export default function Menu({ children, items = [], hideOnClick = false, onChan
     });
   };
 
+  const handleBack = () => {
+    setHistory((prev) => prev.slice(0, prev.length - 1));
+  }
+
+  const renderResult = (attribute) => (
+    <div className={cx('menu-list')} tabIndex={-1} {...attribute}>
+      <PopperWrapper className={cx('menu-popper')}>
+        {history.length > 1 && (
+          <Header
+            title={current.title}
+            onBack={handleBack}
+          />
+        )}
+        <div className={history.length > 1 ? cx('menu-body', 'max-height') : ''}>{renderItems()}</div>
+      </PopperWrapper>
+    </div>
+  );
+
+  const handleReset = () => {
+    setHistory((prev) => prev.slice(0, 1));
+  };
+
   return (
     <Tippy
       interactive
@@ -48,22 +70,8 @@ export default function Menu({ children, items = [], hideOnClick = false, onChan
       offset={[10, 12]}
       placement="bottom-end"
       hideOnClick={hideOnClick}
-      onHide={() => setHistory((prev) => prev.slice(0, 1))}
-      render={(attribute) => (
-        <div className={cx('menu-list')} tabIndex={-1} {...attribute}>
-          <PopperWrapper className={cx('menu-popper')}>
-            {history.length > 1 && (
-              <Header
-                title={current.title}
-                onBack={() => {
-                  setHistory((prev) => prev.slice(0, prev.length - 1));
-                }}
-              />
-            )}
-            <div className={history.length > 1 ? cx('menu-body', 'max-height') : ''}>{renderItems()}</div>
-          </PopperWrapper>
-        </div>
-      )}
+      onHide={handleReset}
+      render={renderResult}
     >
       {children}
     </Tippy>

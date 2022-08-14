@@ -16,16 +16,16 @@ const cx = classNames.bind(styles);
 function Search({ ...props }) {
   const [searchValue, setSearchValue] = useState('');
   const [searchResult, setSearchResult] = useState([]);
-  const [showResult, setShowResult] = useState(true);
+  const [showResult, setShowResult] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const debounced = useDebounce(searchValue, 500);
+  const debouncedValue = useDebounce(searchValue, 500);
 
   const inputRef = useRef();
   const searchBox = useRef();
 
   useEffect(() => {
-    if (!debounced.trim()) {
+    if (!debouncedValue.trim()) {
       setSearchResult([]);
       return;
     }
@@ -34,7 +34,7 @@ function Search({ ...props }) {
     (async () => {
       await searchApi
         .getSearchResult({
-          q: debounced,
+          q: debouncedValue,
           type: 'less',
         })
         .then((response) => {
@@ -46,7 +46,7 @@ function Search({ ...props }) {
           setLoading(false);
         });
     })();
-  }, [debounced]);
+  }, [debouncedValue]);
   function validate(input) {
     if (/^\s/.test(input.value)) input.value = '';
   }
