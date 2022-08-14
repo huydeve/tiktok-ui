@@ -27,6 +27,61 @@ html {
 body {
     font-family: var(--font-family);
     text-rendering: optimizeSpeed;
+    min-height: 100vh;
+    line-height: 1.5;
+
+    overflow-y: overlay;
+    font-size: 14px;
+    color: rgba(22, 24, 35, 1.0);
+    background-color: rgba(255, 255, 255, 1.0);
+    overscroll-behavior: contain;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+//scrollbar css 
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .15);
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .15);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 button,
@@ -105,4 +160,9 @@ body {
         top: -8px
     }
 
+}
+
+
+.max-height {
+    max-height: min((100vh - 287px) - 60px, 734px);
 }

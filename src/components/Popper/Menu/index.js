@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Tippy, { tippy } from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 
 const defaultFn = () => {};
 
-export default function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
+export default function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn, ...props }) {
   const [history, setHistory] = useState([{ data: items }]);
 
   const current = history[history.length - 1];
@@ -54,8 +54,7 @@ export default function Menu({ children, items = [], hideOnClick = false, onChan
                 }}
               />
             )}
-
-            {renderItems()}
+            <div className={history.length > 1 && cx('menu-body', 'max-height')}>{renderItems()}</div>
           </PopperWrapper>
         </div>
       )}

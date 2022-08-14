@@ -3,6 +3,7 @@
     width: 361px;
 }
 
+
 .search {
     position: relative;
     height: var(--search-height);
@@ -53,7 +54,9 @@
     color: rgba(22, 24, 35, 0.5);
 }
 
-
+.search-body{
+    overflow-y: auto;
+}
 .clear,
 .loading {
     position: absolute;

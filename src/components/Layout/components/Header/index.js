@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import routesConfig from '@/config/routes'
+import routesConfig from '@/config/routes';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -37,6 +37,78 @@ const MENU_ITEMS = [
         {
           code: 'en',
           title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng việt',
         },
         {
           code: 'vi',
@@ -88,18 +160,26 @@ export default function Header() {
     },
   ];
 
+
+  
+
+
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('logo')}>
-          <Link to = {routesConfig.home} className={cx('logo-link')}>
+          <Link to={routesConfig.home} className={cx('logo-link')}>
             <img src={images.logo} alt="Tiktok" />
           </Link>
         </div>
 
         <Search />
         <div className={cx('actions')}>
-          <Button outline leftIcon={<FontAwesomeIcon height={20} width={20} icon={faPlus} />} className={cx('upload-btn')}>
+          <Button
+            outline
+            leftIcon={<FontAwesomeIcon height={20} width={20} icon={faPlus} />}
+            className={cx('upload-btn')}
+          >
             Upload
           </Button>
           {currentUser ? (
@@ -110,7 +190,7 @@ export default function Header() {
                 </button>
               </Tippy>
               <Tippy content="Inbox" placement="bottom">
-                <button className={cx('action-btn')}>
+                <button className={cx('action-btn', 'inbox-btn')}>
                   <InboxIcon />
                 </button>
               </Tippy>
@@ -123,19 +203,19 @@ export default function Header() {
             </>
           )}
           <Menu items={currentUser ? USER_MENU : MENU_ITEMS} onChange={handleMenuChange}>
-            <button className={cx('more-btn')}>
-              {currentUser ? (
-                <>
-                  <Image
-                    className={cx('user-avatar')}
-                    alt=""
-                    src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7130916756222132229~c5_720x720.jpeg?x-expires=1660467600&x-signature=Yta2k7jYuSzJlTj4D2VwELJRnMM%3D"
-                  />
-                </>
-              ) : (
+            {currentUser ? (
+              <button className={cx('avatar-btn')}>
+                <Image
+                  className={cx('user-avatar')}
+                  alt=""
+                  src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7130916756222132229~c5_720x720.jpeg?x-expires=1660467600&x-signature=Yta2k7jYuSzJlTj4D2VwELJRnMM%3D"
+                />
+              </button>
+            ) : (
+              <button className={cx('more-btn')}>
                 <MenuIcon />
-              )}
-            </button>
+              </button>
+            )}
           </Menu>
         </div>
       </div>
