@@ -1,4 +1,5 @@
 import { FollowingBoldIcon, FollowingIcon, HomeBoldIcon, HomeIcon, LiveBoldIcon, LiveIcon } from '@/components/Icons';
+import SuggestedAccounts from '@/components/SuggestedAccounts';
 import config from '@/config';
 import classNames from 'classnames/bind';
 import Menu, { MenuItem } from './Menu';
@@ -18,6 +19,8 @@ export default function SideBar() {
         />
         <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveBoldIcon />} />
       </Menu>
+      <SuggestedAccounts label="Suggested accounts" popper />
+      <SuggestedAccounts label="Following accounts" />
     </aside>
   );
 }

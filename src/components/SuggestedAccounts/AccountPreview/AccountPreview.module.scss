@@ -1,0 +1,73 @@
+.follow-btn {
+    width: 106px;
+    height: 34px;
+    padding: 6px 8px;
+    border: none;
+}
+
+.wrapper {
+    width: 320px;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.body {}
+
+.nickname {
+    color: rgb(22, 24, 35);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.check {
+    margin-left: 4px;
+    height: 14px;
+    width: 14px;
+    color: var(--check-color);
+}
+
+.name {
+    color: rgb(22, 24, 35);
+    font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.statistic {
+    margin-top: 8px;
+}
+
+.value {
+    font-weight: 700;
+    margin-right: 6px;
+    font-size: 17px;
+    line-height: 20px;
+    display: inline-block;
+}
+
+.label:not(:last-of-type) {
+    margin-right: 12px;
+}
+
+.label {
+    color: rgba(22, 24, 35, 0.75);
+    font-size: 17px;
+    line-height: 20px;
+    display: inline-block;
+}

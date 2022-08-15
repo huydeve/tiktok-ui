@@ -1,5 +1,34 @@
 .menu-list {
     width: 224px;
+
+}
+
+.menu-list::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    transform: translateY(-50%) rotate(45deg);
+    z-index: 0;
+}
+
+.hide {
+    animation: hideMe 2s forwards;
+
+}
+
+@keyframes hideMe {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 .menu-popper {
@@ -58,6 +87,7 @@
     flex-shrink: 0;
     height: 50px;
     margin-top: -8px;
+    color: var(--black);
 }
 
 .back-btn {
