@@ -18,6 +18,8 @@ function SuggestedAccounts({ label, popper = false, message }) {
           <AccountItem popper={popper} />
           <AccountItem popper={popper} />
           <AccountItem popper={popper} />
+          <AccountItem popper={popper} />
+          <AccountItem popper={popper} />
           <p className={cx('more-btn')}>See all</p>
         </>
       );
