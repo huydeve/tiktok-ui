@@ -13,7 +13,7 @@ const cx = classNames.bind(styles);
 export default function SideBar() {
   const user = useSelector((state) => state.persistedReducer.user.profile.data);
   const style = {
-    height: '75vh',
+    height: '80vh',
     transform:
       'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1) scale(1.42463) translateZ(-0.424626px) translateZ(-2px)',
   };
