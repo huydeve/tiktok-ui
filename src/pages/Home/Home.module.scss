@@ -151,12 +151,12 @@
 
 }
 
-.action-item {
+.action-btn {
     background: transparent;
     display: flex;
     align-items: center;
     flex-direction: column;
-
+    cursor: pointer;
     svg {
         height: 20px !important;
         width: 20px !important;

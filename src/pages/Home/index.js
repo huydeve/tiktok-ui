@@ -1,9 +1,9 @@
 import Button from '@/components/Button';
-import { CommentIcon, MusicNoteIcon } from '@/components/Icons';
+import {  MusicNoteIcon } from '@/components/Icons';
 import Image from '@/components/Image';
 import Video from '@/components/Video';
 import config from '@/config';
-import { faComment, faCommentDots, faHeart, faShare } from '@fortawesome/free-solid-svg-icons';
+import {  faCommentDots, faHeart, faShare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import React, { useRef } from 'react';
@@ -61,7 +61,7 @@ export default function Home() {
           <button onClick={handlePause}>pause</button>
         </div>
         <div className={cx('action-items-container')}>
-          <button className={cx('action-item')} onClick={() => {}}>
+          <button className={cx('action-btn')} onClick={() => {}}>
             <span className={cx('action-icon')}>
               <FontAwesomeIcon icon={faHeart} />
             </span>
@@ -69,7 +69,7 @@ export default function Home() {
               97.6K
             </strong>
           </button>
-          <button className={cx('action-item')} onClick={() => {}}>
+          <button className={cx('action-btn')} onClick={() => {}}>
             <span className={cx('action-icon')}>
               <FontAwesomeIcon icon={faCommentDots} />
 
@@ -78,7 +78,7 @@ export default function Home() {
               97.6K
             </strong>
           </button>
-          <button className={cx('action-item')} onClick={() => {}}>
+          <button className={cx('action-btn')} onClick={() => {}}>
             <span className={cx('action-icon')}>
               <FontAwesomeIcon icon={faShare} />
             </span>
