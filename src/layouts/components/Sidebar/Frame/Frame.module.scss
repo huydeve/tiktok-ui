@@ -1,0 +1,36 @@
+.wrapper {
+    padding: 20px 8px 24px;
+    line-height: 20px;
+    position: relative;
+}
+
+.wrapper::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: 0;
+    height: 1px;
+    background: rgba(22, 24, 35, 0.12);
+    -webkit-transform: scaleY(0.5);
+    -moz-transform: scaleY(0.5);
+    -ms-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+
+.login-hint {
+    color: rgba(22, 24, 35, 0.5);
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.login-btn {
+    font-weight: 600;
+    font-family: var(--font-heading);
+    margin-top: 20px;
+    min-width: 168px;
+    min-height: 48px;
+    font-size: 18px;
+    line-height: 25px;
+    width: 100%;
+}

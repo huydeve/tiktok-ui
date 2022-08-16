@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-import  {
+import {
   CoinIcon,
   FeedbackIcon,
   images,
@@ -24,6 +24,7 @@ import Button from '@/components/Button';
 import Menu from '@/components/Popper/Menu';
 import Image from '@/components/Image';
 import Search from '@/components/Search';
+import { useSelector } from 'react-redux';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -128,8 +129,7 @@ const MENU_ITEMS = [
 ];
 
 export default function Header() {
-  const currentUser = true;
-
+  const user = useSelector((state) => state.persistedReducer.user.profile.data);
   const handleMenuChange = (menuItem) => {
     console.log(menuItem);
   };
@@ -176,7 +176,7 @@ export default function Header() {
           >
             Upload
           </Button>
-          {currentUser ? (
+          {user ? (
             <>
               <Tippy content="Messages" placement="bottom">
                 <button className={cx('action-btn', 'message-btn')}>
@@ -196,9 +196,9 @@ export default function Header() {
               </Button>
             </>
           )}
-          <Menu items={currentUser ? USER_MENU : MENU_ITEMS} onChange={handleMenuChange}>
+          <Menu items={user ? USER_MENU : MENU_ITEMS} onChange={handleMenuChange}>
             <div>
-              {currentUser ? (
+              {user ? (
                 <button className={cx('avatar-btn')}>
                   <Image
                     className={cx('user-avatar')}
